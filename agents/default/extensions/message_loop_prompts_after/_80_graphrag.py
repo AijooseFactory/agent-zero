@@ -43,6 +43,8 @@ class GraphRAGExtension(Extension):
     """
 
     async def execute(self, loop_data=None, **kwargs):
+        logger.info("GRAPHRAG_EXTENSION_LOADED")
+
         # Gate 1: feature flag
         if os.getenv("GRAPH_RAG_ENABLED", "false").lower() != "true":
             return
